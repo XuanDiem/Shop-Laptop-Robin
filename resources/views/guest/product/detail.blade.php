@@ -20,7 +20,7 @@
             </thead>
             <tr>
                 <td><b>{{$product->id}}</b></td>
-                <td><img src="{{ asset('storage'. $product->image) }}" alt="" style="width: 150px"></td>
+                <td><img src="{{ asset(''. $product->image) }}" alt="" style="width: 150px"></td>
                 <td><b><h4>{{$product->name}}</h4></b></td>
                 {{--<td><b>{{$product->amount}}</b></td>--}}
                 <td><b>{{number_format($product->price)}}</b></td>

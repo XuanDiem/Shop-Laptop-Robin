@@ -33,12 +33,12 @@
         <div class="container">
             {{--            <a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
             <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
-                    src="{{asset('storage/images/shopRobinDiem.png')}}" alt="" width="350px"></a>
+                    src="{{asset('shopRobinDiem.png')}}" alt="" width="350px"></a>
         </div>
         <div>
             <form action="{{route('change')}}" method="post">
-                <img src="{{asset('storage/images/en.jpg')}}" alt="" width="30px">
-                <img src="{{asset('storage/images/vn.png')}}" alt="" width="32px">
+                <img src="{{asset('en.jpg')}}" alt="" width="30px">
+                <img src="{{asset('vn.png')}}" alt="" width="32px">
                 @csrf
                 <select class="btn btn-outline-light" name="lang" id="" onchange="this.form.submit()">
                     @if(Session::has('locale'))
@@ -176,7 +176,7 @@
         <p class="btn btn-dark pull-left">Copyright © 2019 Robin</p>
         <p class="btn btn-dark pull-right">Designed by Robin</p>
         <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br><img
-                src="{{asset('storage/images/mycolor.png')}}" alt="" width="20%"></p>
+                src="{{asset('mycolor.png')}}" alt="" width="20%"></p>
     </div>
 </footer>
 </html>

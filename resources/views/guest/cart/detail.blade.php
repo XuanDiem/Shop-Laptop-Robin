@@ -69,7 +69,7 @@
             <a href="{{route('pay.create')}}" class="btn btn-primary"> Payment of products</a>
         @else
             <div align="center">
-                <img src="{{asset('storage/images/ahihi.gif')}}" alt="" width="20%">
+                <img src="{{asset('ahihi.gif')}}" alt="" width="20%">
                 <h1>Không có sản phẩm nào trong giỏ hàng của bạn :(</h1>
                 <a href="{{route('home')}}" class="btn btn-warning">Tiếp tục mua sắm :)</a>
             </div>

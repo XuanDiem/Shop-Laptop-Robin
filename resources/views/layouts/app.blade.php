@@ -172,7 +172,7 @@
 </body>
 <footer>
     <br>
-    <div id="app" align="center">
+    <div id="app" align="center" class="btn-lg" >
         <p class="btn btn-dark pull-left">Copyright © 2019 Robin</p>
         <p class="btn btn-dark pull-right">Designed by Robin</p>
         <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br><img

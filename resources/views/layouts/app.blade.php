@@ -30,7 +30,7 @@
 <body>
 <div id="app" align="center" class="btn border-dark">
     <nav class="btn btn-dark navbar navbar-expand-lg ">
-{{--        <div class="container">--}}
+        <div class="container">
             {{--            <a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
             <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
                     src="{{asset('shopRobinDiem.png')}}" alt="" width="350px"></a>

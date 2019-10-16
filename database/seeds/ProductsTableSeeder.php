@@ -17,7 +17,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 1;
-        $product->image = '/images/dell.jpg';
+        $product->image = 'dell.jpg';
         $product->save();
 
         $product = new Product();
@@ -25,7 +25,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 2;
-        $product->image = '/images/hp.jpeg';
+        $product->image = 'hp.jpeg';
         $product->save();
 
         $product = new Product();
@@ -33,7 +33,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 40000000;
         $product->category_product_id = 3;
-        $product->image = '/images/macbookpro.jpg';
+        $product->image = 'macbookpro.jpg';
         $product->save();
 
         $product = new Product();
@@ -41,7 +41,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 4;
-        $product->image = '/images/samsung.jpeg';
+        $product->image = 'samsung.jpeg';
         $product->save();
 
         $product = new Product();
@@ -49,7 +49,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 5;
-        $product->image = '/images/thinkpad.jpeg';
+        $product->image = 'thinkpad.jpeg';
         $product->save();
 
         $product = new Product();
@@ -57,7 +57,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 15000000;
         $product->category_product_id = 6;
-        $product->image = '/images/dell-Inspiron-55-77.jpg';
+        $product->image = 'dell-Inspiron-55-77.jpg';
         $product->save();
 
         $product = new Product();
@@ -65,7 +65,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 50000000;
         $product->category_product_id = 7;
-        $product->image = '/images/Macbook-Pro-October.jpg';
+        $product->image = 'Macbook-Pro-October.jpg';
         $product->save();
 
         $product = new Product();
@@ -73,7 +73,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 20000000;
         $product->category_product_id = 8;
-        $product->image = '/images/Macbook-Air-2019.jpg';
+        $product->image = 'Macbook-Air-2019.jpg';
         $product->save();
 
         $product = new Product();
@@ -81,7 +81,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 9;
-        $product->image = '/images/laptopMsi.jpg';
+        $product->image = 'laptopMsi.jpg';
         $product->save();
 
         $product = new Product();
@@ -89,7 +89,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 10;
-        $product->image = '/images/acer.jpeg';
+        $product->image = 'acer.jpeg';
         $product->save();
 
         $product = new Product();
@@ -97,7 +97,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 10000000;
         $product->category_product_id = 11;
-        $product->image = '/images/acer-Predator.jpg';
+        $product->image = 'acer-Predator.jpg';
         $product->save();
 
         $product = new Product();
@@ -105,7 +105,7 @@ class ProductsTableSeeder extends Seeder
         $product->amount = 1;
         $product->price = 15000000;
         $product->category_product_id = 12;
-        $product->image = '/images/asus.jpg';
+        $product->image = 'asus.jpg';
         $product->save();
 
     }

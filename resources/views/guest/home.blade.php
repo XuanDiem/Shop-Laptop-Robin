@@ -19,7 +19,7 @@
                     <div class="product-grid">
                         <div class="product-image">
                             <a href="">
-                                <img class="pic-1" src="{{ asset('storage'.$product->image) }}">
+                                <img class="pic-1" src="{{ asset(''.$product->image) }}">
                             </a>
                             <ul class="social">
                                 {{--<li><a href="{{route('detail',$product->id)}}" data-tip="Quick View"><iclass="fa fa-search"></i></a></li>--}}

@@ -29,7 +29,7 @@
                 <td>@foreach($array as $item)
 
                         <b>{{$item['item']->name}}<br></b>
-                        <b><img src="{{asset('storage/'.$item['item']->image)}}" alt="" width="150px"><br></b>
+                        <b><img src="{{asset(''.$item['item']->image)}}" alt="" width="150px"><br></b>
                     @endforeach</td>
             {{--@dd($array)--}}
             </tr>
@@ -37,8 +37,8 @@
 
 
         <br>
-        <img src="{{asset('storage/images/phe.gif')}}" alt="" width="150px">
-        <img src="{{asset('storage/images/hahaha.gif')}}" alt="" width="150px">
+        <img src="{{asset('phe.gif')}}" alt="" width="150px">
+        <img src="{{asset('hahaha.gif')}}" alt="" width="150px">
         <br>
         <a href="{{route('home')}} " class="btn btn-success">Back To Home Page </a>
     </div>

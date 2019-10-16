@@ -25,7 +25,7 @@
                         <td data-th="Product">
                             <div class="row">
                                 <div class="col-md-2 hidden-xs"><img
-                                        src="{{ asset('storage/' . $product['item']->image) }}"
+                                        src="{{ asset(''. $product['item']->image) }}"
                                         alt="..."
                                         class="img-responsive" width="140%"/></div>
                                 <div class="col-md-10">

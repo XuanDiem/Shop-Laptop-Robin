@@ -23,6 +23,7 @@ Route::get('/', function () {
 //Route::middleware('locale')->prefix('admin')->group(function (){});
 
 Route::middleware('locale')->get('/home', 'HomeController@index')->name('home');
+Route::middleware('locale')->get('/search', 'HomeController@search')->name('search');
 
 Route::middleware('locale')->resource('/customers', 'CustomerController');
 Route::middleware('locale')->resource('/users', 'UserController');

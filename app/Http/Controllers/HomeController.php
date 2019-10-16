@@ -35,5 +35,17 @@ class HomeController extends Controller
         return view('guest.home', compact('products'));
     }
 
+    public function search(Request $request)
+    {
+
+        $keyword = $request->input('keyword');
+        if (!$keyword) {
+            return redirect()->route('home');
+        }
+
+        $products = Product::where('name', 'LIKE', '%' . $keyword . '%')->paginate(5);
+        return view('guest.home', compact('products'));
+
+    }
 
 }

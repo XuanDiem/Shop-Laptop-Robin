@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-{{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
+    {{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
     <title>Shop Laptop Robin Diem</title>
 
     <!-- Scripts -->
@@ -66,13 +66,18 @@
         </div>
         <div class="container"><a class="btn btn-outline-primary" href="{{route('category.index')}}"><span
                     style="color: white">@lang('changeLanguage.category-products')</span></a></div>
-        {{--        <div>--}}
-        {{--            <form class="form-inline my-2 my-lg-0">--}}
-        <input class="form-control mr-sm-2" type="search" placeholder="@lang('changeLanguage.search') O--"
-               aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">@lang('changeLanguage.search')</button>
-        {{--            </form>--}}
-        {{--        </div>--}}
+
+        <form action="{{route('search')}}" class="form-inline my-2 my-lg-0" method="get">
+            @csrf
+            <div>
+                <input class="form-control mr-sm-2" type="search" placeholder="@lang('changeLanguage.search') O--"
+                       aria-label="Search" name="keyword">
+                <button class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">@lang('changeLanguage.search')</button>
+            </div>
+        </form>
+
+
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{--                {{ config('app.name', 'Laravel') }}--}}
@@ -173,7 +178,7 @@
 </body>
 <footer>
     <br>
-    <div id="app" align="center" class="btn-lg" >
+    <div id="app" align="center" class="btn-lg">
         <p class="btn btn-dark pull-left">Copyright © 2019 Robin</p>
         <p class="btn btn-dark pull-right">Designed by Robin</p>
         <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br><img

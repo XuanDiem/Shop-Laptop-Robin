@@ -30,7 +30,7 @@
 <body>
 <div id="app" align="center" class="btn border-dark">
     <nav class="btn btn-dark navbar navbar-expand-lg ">
-        <div class="container">
+{{--        <div class="container">--}}
             {{--            <a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
             <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
                     src="{{asset('shopRobinDiem.png')}}" alt="" width="350px"></a>
@@ -54,7 +54,7 @@
                 </select>
             </form>
         </div>
-        <img src="{{asset('storage/images/oki.gif')}}" alt="" width="10%">
+        <img src="{{asset('oki.gif')}}" alt="" width="10%">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -152,7 +152,7 @@
                @endif
                @endif">
                 <div class="navbar-nav">
-                    <img src="{{asset('storage/images/tao.png')}}" alt="" width="50px">
+                    <img src="{{asset('tao.png')}}" alt="" width="50px">
                     <span class=" fa fa-shopping-cart" style="color: red"><b>+@lang('changeLanguage.cart') :</b>
                         @if(Session::has('cart'))
                             {{Session::get('cart')->totalAmount}}

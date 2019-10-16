@@ -21,7 +21,7 @@
                 <td><b><h4>{{$product->name}}</h4></b></td>
                 <td><b>{{number_format($product->price)}}</b></td>
                 <td><b>{{$product->amount}}</b></td>
-                <td><img src="{{ asset('storage'. $product->image) }}" alt="" style="width: 150px"></td>
+                <td><img src="{{ asset(''. $product->image) }}" alt="" style="width: 150px"></td>
             </tr>
 {{--            <a class="btn btn-danger" href="{{route('add',$product->id)}}"><h1>Add to Cart</h1></a>--}}
         </table>

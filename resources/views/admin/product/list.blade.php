@@ -20,7 +20,7 @@
                     <td><b><h3>{{$product->name}}</h3></b></td>
                     <td><b>{{number_format($product->price)}}</b></td>
                     <td>{{$product->amount}}</td>
-                    <td><img src="{{asset('storage'.$product->image)}}" alt="" width="250px"></td>
+                    <td><img src="{{asset(''.$product->image)}}" alt="" width="250px"></td>
                     <td>
                         <a href="{{route('products.show',$product->id)}}" class="btn btn-primary">Detail</a>
                     </td>

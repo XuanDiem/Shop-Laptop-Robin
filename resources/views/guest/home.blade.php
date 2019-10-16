@@ -5,7 +5,7 @@
             <h2 class="alert-danger">{{Session::get('success')}}</h2>
         </div>
     @endif
-    <div><img src="{{asset('storage/images/laptop1.gif')}}" alt="" width="100%" height="500px"></div>
+    <div><img src="{{asset('laptop1.gif')}}" alt="" width="100%" height="500px"></div>
     <br>
     <h1><b style="color: cornflowerblue"> . . . . . . </b></h1>
     <br>

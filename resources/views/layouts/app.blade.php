@@ -181,8 +181,15 @@
     <div id="app" align="center" class="btn-lg">
         <p class="btn btn-dark pull-left">Copyright © 2019 Robin</p>
         <p class="btn btn-dark pull-right">Designed by Robin</p>
-        <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br><img
-                src="{{asset('mycolor.png')}}" alt="" width="20%"></p>
+
+            <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br>
+                <a href="https://www.facebook.com/"><img src="{{asset('face2.png')}}" alt="" width="5%"></a>
+                <a href="https://www.youtube.com/channel/UCdKo0tQCwBjNKbEoevpeX7g?view_as=subscriber"><img src="{{asset('youtobe.png')}}" alt="" width="5%"></a>
+                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('instaram.png')}}" alt="" width="5%"></a><br>
+                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('hotline.png')}}" alt="" width="5%"></a>
+                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('bird.png')}}" alt="" width="5%"></a>
+                <a href=""><img src="{{asset('like.png')}}" alt="" width="5%"></a>
+            </p>
     </div>
 </footer>
 </html>

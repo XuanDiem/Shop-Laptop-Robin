@@ -50,3 +50,5 @@ Route::middleware('locale')->get('/bill-index', 'ShoppingCartController@index')-
 Route::post('/change', 'LangController@changeLanguage')->name('change');
 
 //Route::get('/welcome', 'WelcomeAdminController')->name('welcome');
+Route::get('/redirect/{social}', 'SocialAuthController@redirect');
+Route::get('/callback/{social}', 'SocialAuthController@callback');

@@ -54,7 +54,12 @@
                                         <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}
                                         </label><br>
-                                       <div> <a href="redirect/facebook" class="btn btn-outline-primary">Login with facebook <img src="{{asset('face2.png')}}" alt="" width="15%"></a></div>
+                                       <div> <a href="redirect/facebook" class="btn btn-outline-primary">Login with Facebook <img src="{{asset('face2.png')}}" alt="" width="15%"></a>
+                                       </div>
+                                        <br>
+                                        <div>
+                                            <a href="redirect/google" class="btn btn-outline-danger">Login with Email <img src="{{asset('email2.png')}}" alt="" width="20.5%"></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

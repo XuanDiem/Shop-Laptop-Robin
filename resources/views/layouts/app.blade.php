@@ -186,8 +186,8 @@
                 <a href="https://www.facebook.com/Robin.Diem.88"><img src="{{asset('face2.png')}}" alt="" width="5%"></a>
                 <a href="https://www.youtube.com/channel/UCdKo0tQCwBjNKbEoevpeX7g?view_as=subscriber"><img src="{{asset('youtobe.png')}}" alt="" width="5%"></a>
                 <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('instaram.png')}}" alt="" width="5%"></a><br>
-                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('hotline.png')}}" alt="" width="5%"></a>
-                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('bird.png')}}" alt="" width="5%"></a>
+                <a href="https://line.me/vi/"><img src="{{asset('hotline.png')}}" alt="" width="5%"></a>
+                <a href="https://twitter.com/?lang=vi"><img src="{{asset('bird.png')}}" alt="" width="5%"></a>
                 <a href=""><img src="{{asset('like.png')}}" alt="" width="5%"></a>
             </p>
     </div>

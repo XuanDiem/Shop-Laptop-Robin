@@ -81,6 +81,8 @@ class ShoppingCartController extends Controller
         }
 //        dd($cart);
         $products = $this->getProduct();
+//        var_dump(Session::get('cart'));
+//        dd(Session::get('cart'));
         return view('guest.cart.detail', compact('cart', 'products'));
     }
 
@@ -110,7 +112,6 @@ class ShoppingCartController extends Controller
         $cart->changeCart($product, $request);
 
         Session::put('cart', $cart);
-        Session::flash('success', 'Thêm sản phẩm vào giỏ hàng thành công!');
 //        dd($cart);
         return redirect()->back();
     }
@@ -121,6 +122,7 @@ class ShoppingCartController extends Controller
 
         if (Session::has('cart')) {
             $oldCart = Session::get('cart');
+            Session::flash('success', 'Xóa sản phẩm khỏi giỏ hàng thành công!');
         } else {
             $oldCart = null;
         }
@@ -129,7 +131,7 @@ class ShoppingCartController extends Controller
         $cart->deleteInCart($product);
 
         Session::put('cart', $cart);
-        Session::flash('success', 'Xóa sản phẩm khỏi giỏ hàng thành công!');
+//        Session::flash('success', 'Xóa sản phẩm khỏi giỏ hàng thành công!');
 
         return redirect()->back();
     }

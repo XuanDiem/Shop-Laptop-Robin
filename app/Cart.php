@@ -5,6 +5,7 @@ namespace App;
 
 
 use http\Env\Request;
+use Illuminate\Support\Facades\Session;
 
 class Cart
 {
@@ -90,20 +91,19 @@ class Cart
     public function addInToCart($item, $request, $storeProduct)
     {
 //        $storeProduct = ['amount' => 0, 'price' => $item->price, 'item' => $item];
-
-        if ($request->qty) {
-            $storeProduct['amount'] = $request->qty;
-            $storeProduct['amount']++;
+//        dd(1);
+        if ($request->quantity) {
+            $storeProduct['amount'] = $request->quantity;
         } else {
             $storeProduct['amount']++;
-
         }
-
 
         $storeProduct['price'] = $item->price * $storeProduct['amount'];
         $this->items[$item->id] = $storeProduct;
         $this->totalPrice += $storeProduct['price'];
         $this->totalAmount += $storeProduct['amount'];
+
+        Session::flash('success', 'Thêm sản phẩm vào giỏ hàng thành công!');
 
     }
 
@@ -133,13 +133,21 @@ class Cart
 
     public function listenIncreaseOrDecreaseProduct($request, $item, $storeProduct)
     {
-        if ($storeProduct['amount'] < $request->qty) {
-            $this->totalAmount -= ($request->qty - 1);
+//        dd($request->quantity);
+        if ($storeProduct['amount'] < $request->quantity) {
+            $this->totalAmount -= ($request->quantity - 1);
             $this->totalPrice = ($this->totalPrice - $storeProduct['price']);
             $this->addInToCart($item, $request, $storeProduct);
         } else {
+//           dd(1);
             $this->removeFromCart($item, $storeProduct);
+            Session::flash('success', 'Xóa sản phẩm vào giỏ hàng thành công!');
+
         }
+//        else {
+//            $storeProduct['amount']++;
+//            Session::flash('success', 'Xóa sản phẩm vào giỏ hàng thành công!');
+//        }
     }
 
     public function createIfNotUpdate($item, $request, $storeProduct)

@@ -34,7 +34,7 @@
         <div class="container">
             {{--            <a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
             <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
-                    src="{{asset('shopRobinDiem.png')}}" alt="" width="350px"></a>
+                    src="{{asset('shopRobinDiem.png')}}" alt="" width="320px"></a>
         </div>
         <div>
             <form action="{{route('change')}}" method="post">

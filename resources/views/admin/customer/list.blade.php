@@ -44,7 +44,7 @@
                         <td><b>{{$customer->address}}</b></td>
                         <td><b>{{$customer->phone}}</b></td>
                         <td><b>{{$customer->gender}}</b></td>
-                        <td><img src="{{ asset('storage'. $customer->image) }}" alt="" style="width: 150px">
+                        <td><img src="{{ asset(''. $customer->image) }}" alt="" style="width: 150px">
                         </td>
                         @can('crud-customer')
                             <td>

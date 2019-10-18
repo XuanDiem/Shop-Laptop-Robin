@@ -20,7 +20,8 @@
                 <th scope="col"><b>Phone</b></th>
                 <th scope="col"><b>Gender</b></th>
                 <th scope="col"><b>Image</b></th>
-                @can('crud-users')
+                {{--                @dd(12)--}}
+                @can('crud-customer')
                     <th scope="col" colspan="3"><b>Options</b></th>
                 @endcan
 
@@ -45,7 +46,7 @@
                         <td><b>{{$customer->gender}}</b></td>
                         <td><img src="{{ asset('storage'. $customer->image) }}" alt="" style="width: 150px">
                         </td>
-                        @can('crud-users',$customer->id)
+                        @can('crud-customer')
                             <td>
                                 <a href="{{route('customers.show',$customer->id)}}" class="btn btn-primary"><b>Show</b></a>
                             </td>

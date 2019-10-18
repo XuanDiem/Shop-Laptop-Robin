@@ -19,7 +19,7 @@ class CustomersTableSeeder extends Seeder
         $customer->address = 'Việt Nam';
         $customer->phone = '123456789';
         $customer->gender = 'male';
-        $customer->image = '/images/vuxuandiem123.jpg';
+        $customer->image = 'vuxuandiem123.jpg';
         $customer->save();
 
         $customer = new Customer();
@@ -28,7 +28,7 @@ class CustomersTableSeeder extends Seeder
         $customer->address = 'Pogtugal';
         $customer->phone = '123456789';
         $customer->gender = 'male';
-        $customer->image = '/images/ronaldo.jpg';
+        $customer->image = 'ronaldo.jpg';
         $customer->save();
 
         $customer = new Customer();
@@ -37,7 +37,7 @@ class CustomersTableSeeder extends Seeder
         $customer->address = 'Argentina';
         $customer->phone = '123456789';
         $customer->gender = 'male';
-        $customer->image = '/images/messi.png';
+        $customer->image = 'messi.png';
         $customer->save();
 
         $customer = new Customer();
@@ -46,7 +46,7 @@ class CustomersTableSeeder extends Seeder
         $customer->address = 'Việt Nam';
         $customer->phone = '123456789';
         $customer->gender = 'male';
-        $customer->image = '/images/quanghai.jpeg';
+        $customer->image = 'quanghai.jpeg';
         $customer->save();
 
         $customer = new Customer();

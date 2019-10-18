@@ -42,6 +42,9 @@
             @endforeach
         </table>
         <a href="{{route('customers.index')}}" class="btn btn-primary">View List Customers</a>
+        @can('crud-products')
+            <a href="" class="btn btn-warning">Add New Product</a>
+        @endcan
     </div>
 @endsection
 

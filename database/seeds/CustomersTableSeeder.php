@@ -55,7 +55,7 @@ class CustomersTableSeeder extends Seeder
         $customer->address = 'Việt Nam';
         $customer->phone = '123456789';
         $customer->gender = 'female';
-        $customer->image = '/images/thutrang.jpg';
+        $customer->image = 'thutrang.jpg';
         $customer->save();
 
     }

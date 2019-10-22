@@ -39,6 +39,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
+     return view('admin.customer.create');
     }
 
     /**

@@ -60,19 +60,19 @@
                     <td><input type="file" id="image" name="image" value="image" size="30"></td>
                 </tr>
 
-                <tr>
-                    <td>Id employee:</td>
-                    <td><select name="employee_id">
-                            <option></option>
-                            @foreach($employees as $employee )
-                                <option> {{$employee->id}}</option>
-                            @endforeach
-                        </select>
-                        @if($errors->has('employee_id'))
-                            <span class="text-danger">{{$errors->first('employee_id')}}</span>
-                        @endif</td>
-                    </td>
-                </tr>
+{{--                <tr>--}}
+{{--                    <td>Id employee:</td>--}}
+{{--                    <td><select name="employee_id">--}}
+{{--                            <option></option>--}}
+{{--                            @foreach($employees as $employee )--}}
+{{--                                <option> {{$employee->id}}</option>--}}
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+{{--                        @if($errors->has('employee_id'))--}}
+{{--                            <span class="text-danger">{{$errors->first('employee_id')}}</span>--}}
+{{--                        @endif</td>--}}
+{{--                    </td>--}}
+{{--                </tr>--}}
                 <br>
                 <tr>
                     <td>

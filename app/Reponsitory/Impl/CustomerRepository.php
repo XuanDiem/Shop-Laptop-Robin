@@ -32,7 +32,6 @@ class CustomerRepository implements CustomerRepositoryInterface
     public function show($id)
     {
         $customer = Customer::find($id);
-        $customer->save();
         return $customer;
     }
 

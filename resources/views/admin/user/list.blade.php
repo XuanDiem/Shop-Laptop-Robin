@@ -18,7 +18,7 @@
                     <th scope="row">{{$user['id']}}</th>
                     <td>{{$user['name']}}</td>
                     <td>{{$user['email']}}</td>
-                    {{--                    <td>{{$user['password']}}</td>--}}
+                    {{--<td>{{$user['password']}}</td>--}}
                     @can('crud-users', $user->id)
                         <td>
                             <a href="{{route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>

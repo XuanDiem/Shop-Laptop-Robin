@@ -4,11 +4,11 @@
     <div class="container">
         <h1 class="btn-primary"><b>Create New Customer</b></h1>
 
-        <form action="{{ route('customers.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{route('customers.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <table class="table" border="2" bgcolor="#32cd32">
                 <tr>
-                    <td>Name:</td>
+                    <td.0>Name:</td.0+>
                     <td><input type="text" name="name" size="30" placeholder="Enter your name in the box !">
                         @if($errors->has('name'))
                             <span class="text-danger">{{$errors->first('name')}}</span>
@@ -48,7 +48,7 @@
                         </select>
                         @if($errors->has('gender'))
                             <span class="text-danger">{{$errors->first('gender')}}</span>
-                        @endif</td>
+                        @endif
                     </td>
                 </tr>
                 <tr>
@@ -56,23 +56,29 @@
                     <td><input type="text" id="images" name="images" size="30" placeholder="File Name !">
                         @if($errors->has('image'))
                             <span class="text-danger">{{$errors->first('image')}}</span>
-                        @endif</td>
-                    <td><input type="file" id="image" name="image" value="image" size="30"></td>
+                        @endif
+                    </td>
+                    <td>
+                        <input type="file" id="image" name="image" value="image" size="30">
+                        @if($errors->has('image'))
+                            <span class="text-danger">{{$errors->first('image')}}</span>
+                        @endif
+                    </td>
                 </tr>
 
-{{--                <tr>--}}
-{{--                    <td>Id employee:</td>--}}
-{{--                    <td><select name="employee_id">--}}
-{{--                            <option></option>--}}
-{{--                            @foreach($employees as $employee )--}}
-{{--                                <option> {{$employee->id}}</option>--}}
-{{--                            @endforeach--}}
-{{--                        </select>--}}
-{{--                        @if($errors->has('employee_id'))--}}
-{{--                            <span class="text-danger">{{$errors->first('employee_id')}}</span>--}}
-{{--                        @endif</td>--}}
-{{--                    </td>--}}
-{{--                </tr>--}}
+                {{--                <tr>--}}
+                {{--                    <td>Id employee:</td>--}}
+                {{--                    <td><select name="employee_id">--}}
+                {{--                            <option></option>--}}
+                {{--                            @foreach($employees as $employee )--}}
+                {{--                                <option> {{$employee->id}}</option>--}}
+                {{--                            @endforeach--}}
+                {{--                        </select>--}}
+                {{--                        @if($errors->has('employee_id'))--}}
+                {{--                            <span class="text-danger">{{$errors->first('employee_id')}}</span>--}}
+                {{--                        @endif</td>--}}
+                {{--                    </td>--}}
+                {{--                </tr>--}}
                 <br>
                 <tr>
                     <td>

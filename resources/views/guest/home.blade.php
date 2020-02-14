@@ -42,7 +42,7 @@
                                 </li>
                             </ul>
                             <span class="product-new-label">Sale</span>
-                            {{--                            <span class="product-discount-label">20%</span>--}}
+                            {{--<span class="product-discount-label">20%</span>--}}
                         </div>
                         <ul class="rating">
                             <li class="fa fa-star"></li>

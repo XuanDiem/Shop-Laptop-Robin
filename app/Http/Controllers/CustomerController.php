@@ -39,7 +39,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-     return view('admin.customer.create');
+        return view('admin.customer.create');
     }
 
     /**
@@ -50,8 +50,10 @@ class CustomerController extends Controller
      */
     public function store(CreateCustomerRequest $request)
     {
+//        dd(1);
         $this->customerService->store($request);
-        return redirect()->route('customers.index', compact('message'));
+
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -87,6 +89,7 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+//        dd(1);
         $this->customerService->update($request, $id);
         return redirect()->route('customers.index');
     }

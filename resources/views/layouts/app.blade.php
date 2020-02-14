@@ -27,149 +27,191 @@
     <!------ Include the above in your HEAD tag ---------->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="{{asset('css/home.css')}}">
+
+{{--    <link rel="stylesheet" href="{{asset('css/menu.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('css/hotline.css')}}">
 </head>
 <body>
 <div id="app" align="center" class="btn border-dark">
-    <nav class="btn btn-dark navbar navbar-expand-lg ">
-        <div class="container">
-            {{--            <a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
-            <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
-                    src="{{asset('shopRobinDiem.png')}}" alt="" width="320px"></a>
-        </div>
-        <div>
-            <form action="{{route('change')}}" method="post">
-                <img src="{{asset('en.jpg')}}" alt="" width="30px">
-                <img src="{{asset('vn.png')}}" alt="" width="32px">
-                @csrf
-                <select class="btn btn-outline-light" name="lang" id="" onchange="this.form.submit()">
-                    @if(Session::has('locale'))
-                        @if(Session::get('locale')==="en")
-                            <option>EN</option>
-                        @else
-                            <option>VN</option>
-                        @endif
-                    @endif
-                    <option value="">@lang('changeLanguage.choose-language')</option>
-                    <option value="en">English</option>
-                    <option value="vi">VietNamese</option>
-                </select>
-            </form>
-        </div>
-        <img src="{{asset('oki.gif')}}" alt="" width="10%">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="btn btn-outline-danger" href="{{route('home')}}">@lang('changeLanguage.home') <span
-                            class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-        <div class="container"><a class="btn btn-outline-primary" href="{{route('category.index')}}"><span
-                    style="color: white">@lang('changeLanguage.category-products')</span></a></div>
-
-        <form action="{{route('search')}}" class="form-inline my-2 my-lg-0" method="get">
-            @csrf
-            <div>
-                <input class="form-control mr-sm-2" type="search" placeholder="@lang('changeLanguage.search') O--"
-                       aria-label="Search" name="keyword">
-                <button class="btn btn-outline-success my-2 my-sm-0"
-                        type="submit">@lang('changeLanguage.search')</button>
+{{--    <div class="menu">--}}
+        <nav class="btn btn-dark navbar navbar-expand-lg">
+            <div class="container">
+                {{--<a href="{{route('home')}}"><span style="background: #10e7ff"><b><h1 class="btn btn-primary " style="width:400px">LAPTOP SHOP AHIHI</h1></b></span></a>--}}
+                <br><a class="btn btn-outline-primary" href="{{route('home')}}"><img
+                        src="{{asset('shopRobinDiem.png')}}" alt="" width="320px"></a>
             </div>
-        </form>
-
-
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{--                {{ config('app.name', 'Laravel') }}--}}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
+            <div>
+                <form action="{{route('change')}}" method="post">
+                    <img src="{{asset('en.jpg')}}" alt="" width="30px">
+                    <img src="{{asset('vn.png')}}" alt="" width="32px">
+                    @csrf
+                    <select class="btn btn-outline-light" name="lang" id="" onchange="this.form.submit()">
+                        @if(Session::has('locale'))
+                            @if(Session::get('locale')==="en")
+                                <option>EN</option>
+                            @else
+                                <option>VN</option>
+                            @endif
+                        @endif
+                        <option value="">@lang('changeLanguage.choose-language')</option>
+                        <option value="en">English</option>
+                        <option value="vi">VietNamese</option>
+                    </select>
+                </form>
+            </div>
+            <img src="{{asset('oki.gif')}}" alt="" width="10%">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="container">
-                            <a class="btn btn-outline-primary"
-                               href="{{ route('login') }}">@lang('changeLanguage.login')</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="btn btn-outline-primary"
-                                   href="{{ route('register') }}">@lang('changeLanguage.register')</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="btn btn-outline-dark" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <br>
-                                <a href="{{route('home')}}" class="btn btn-outline-danger">Home</a>
-                                <br>
-                                <a href="{{route('users.index')}}" class="btn btn-outline-primary">List Users</a>
-                                <br>
-                                <a href="{{route('products.index')}}" class="btn btn-outline-success">List
-                                    Products</a>
-                                <br>
-                                <a href="{{route('customers.index')}}" class="btn btn-outline-danger">List
-                                    Customers</a>
-
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                </ul>
-            </div>
-            <div>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
+                        <a class="btn btn-outline-danger" href="{{route('home')}}">@lang('changeLanguage.home') <span
+                                class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
-        </div>
-        <div>
-            <a href="{{route('cart.index')}}" class="navbar-brand"
-               onclick="@if(Session::has('cart'))
-               @if(Session::get('cart')->totalAmount==0)
-                   alert('Bạn chưa có sản phẩm nào trong giỏ hàng !')
-               @endif
-               @endif">
-                <div class="navbar-nav">
-                    <img src="{{asset('tao.png')}}" alt="" width="50px">
-                    <span class=" fa fa-shopping-cart" style="color: red"><b>+@lang('changeLanguage.cart') :</b>
-                        @if(Session::has('cart'))
-                            {{Session::get('cart')->totalAmount}}
-                        @else <span><b>0</b></span>
-                        @endif</span>
+            <div class="container"><a class="btn btn-outline-primary" href="{{route('category.index')}}"><span
+                        style="color: white">@lang('changeLanguage.category-products')</span></a></div>
+
+            <form action="{{route('search')}}" class="form-inline my-2 my-lg-0" method="get">
+                @csrf
+                <div>
+                    <input class="form-control mr-md-2" type="search" placeholder="@lang('changeLanguage.search') O--"
+                           aria-label="Search" name="keyword">
+                    <button class="btn btn-outline-success my-2 my-md-0"
+                            type="submit">@lang('changeLanguage.search')</button>
                 </div>
-            </a>
-        </div>
-    </nav>
+            </form>
+
+
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{--{{ config('app.name', 'Laravel') }}--}}
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="container">
+                                <a class="btn btn-outline-primary"
+                                   href="{{ route('login') }}">@lang('changeLanguage.login')</a>
+
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="btn btn-outline-primary"
+                                       href="{{ route('register') }}">@lang('changeLanguage.register')</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="btn btn-outline-dark" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <br>
+                                    <a href="{{route('home')}}" class="btn btn-outline-danger">Home</a>
+                                    <br>
+                                    <a href="{{route('users.index')}}" class="btn btn-outline-primary">List Users</a>
+                                    <br>
+                                    <a href="{{route('products.index')}}" class="btn btn-outline-success">List
+                                        Products</a>
+                                    <br>
+                                    <a href="{{route('customers.index')}}" class="btn btn-outline-danger">List
+                                        Customers</a>
+
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+                <div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <a href="{{route('cart.index')}}" class="navbar-brand"
+                   onclick="@if(Session::has('cart'))
+                   @if(Session::get('cart')->totalAmount==0)
+                       alert('Bạn chưa có sản phẩm nào trong giỏ hàng !')
+                   @endif
+                   @endif">
+                    <div class="navbar-nav">
+                        <img src="{{asset('tao.png')}}" alt="" width="50px">
+                        <span class=" fa fa-shopping-cart" style="color: red"><b>+@lang('changeLanguage.cart') :</b>
+                        @if(Session::has('cart'))
+                                {{Session::get('cart')->totalAmount}}
+                            @else <span><b>0</b></span>
+                            @endif</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+{{--    </div>--}}
+    <br>
+    <div id="hot" class="btn-success position-fixed"><img src="{{asset('hotline2.gif')}}"
+                                                          alt="" width="40px">
+        <span> Liên hệ với chúng tôi !</span><br>
+        <span> 099998888</span>
+    </div>
+
     {{--    <div><a href="" class="pull-left btn btn-primary"> Linh Kiện</a>--}}
     {{--        <a href="" class="pull-left btn btn-primary">Thông Tin</a></div>--}}
+    <div>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // $("#hide").click(function () {
+                //     $("p").hide();
+                // });
+                // $("#show").click(function () {
+                //     $("p").show();
+                // });
+                $("#button").click(function () {
+                    var div = $("div");
+                    div.animate({left: '100px'}, "slow");
+                    div.animate({fontSize: '100px'}, "slow");
+
+                })
+            });
+
+        </script>
+        {{--    <p>If you click on the "Hide" button, I will disappear.</p>--}}
+        {{--    <p>Else click on the "Show" button, I will return back.</p>--}}
+        {{--    <button id="hide" class="btn btn-success">Hide</button>--}}
+        {{--    <button id="show" class="btn btn-primary">Show</button>--}}
+        <button id="button" class="btn btn-outline-danger">Hotline</button>
+        {{--    <div style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>--}}
+    </div>
+
     <main class="py-4">
         @yield('content')
     </main>
@@ -182,14 +224,15 @@
         <p class="btn btn-dark pull-left">Copyright © 2019 Robin</p>
         <p class="btn btn-dark pull-right">Designed by Robin</p>
 
-            <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br>
-                <a href="https://www.facebook.com/Robin.Diem.88"><img src="{{asset('face2.png')}}" alt="" width="5%"></a>
-                <a href="https://www.youtube.com/channel/UCdKo0tQCwBjNKbEoevpeX7g?view_as=subscriber"><img src="{{asset('youtobe.png')}}" alt="" width="5%"></a>
-                <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('instaram.png')}}" alt="" width="5%"></a><br>
-                <a href="https://line.me/vi/"><img src="{{asset('hotline.png')}}" alt="" width="5%"></a>
-                <a href="https://twitter.com/?lang=vi"><img src="{{asset('bird.png')}}" alt="" width="5%"></a>
-                <a href=""><img src="{{asset('like.png')}}" alt="" width="5%"></a>
-            </p>
+        <p class="btn-dark pull-center"><b>Kết nối với chúng tôi</b><br>
+            <a href="https://www.facebook.com/Robin.Diem.88"><img src="{{asset('face2.png')}}" alt="" width="5%"></a>
+            <a href="https://www.youtube.com/channel/UCdKo0tQCwBjNKbEoevpeX7g?view_as=subscriber"><img
+                    src="{{asset('youtobe.png')}}" alt="" width="5%"></a>
+            <a href="https://www.instagram.com/?hl=vi"><img src="{{asset('instaram.png')}}" alt="" width="5%"></a><br>
+            <a href="https://line.me/vi/"><img src="{{asset('hotline.png')}}" alt="" width="5%"></a>
+            <a href="https://twitter.com/?lang=vi"><img src="{{asset('bird.png')}}" alt="" width="5%"></a>
+            <a href=""><img src="{{asset('like.png')}}" alt="" width="5%"></a>
+        </p>
     </div>
 </footer>
 </html>
